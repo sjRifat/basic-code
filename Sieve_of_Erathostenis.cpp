@@ -20,7 +20,7 @@ vll v;
 void sieve(ll n){
     ll i,j;
     v.pb(2LL);
-    for(i=3;i<=n;i+=2){
+    for(i=3;i<n;i+=2){
         if(ar[i]==0){
             v.pb(i);
             if(i>n/i) continue;
