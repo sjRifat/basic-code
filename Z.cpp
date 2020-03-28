@@ -43,8 +43,8 @@ int main(){
 /*
 to find pattern
 
-s=text+$+ppattern;
+s=pattern+"$"+text;
 
-number of pattern_size value in z vector
+number of pattern_size value in z vector = number of match
 
 */
