@@ -34,6 +34,7 @@ void build(ll nd,ll st,ll ed){
 }
 
 void update(ll nd,ll st,ll ed,ll id,ll val){
+    if(id<st || id>ed) return;
     if(st==ed){
         ar[id]+=val;
         tree[nd]+=val;
@@ -42,8 +43,8 @@ void update(ll nd,ll st,ll ed,ll id,ll val){
         ll mid=(st+ed)/2;
         if(st<=id and id<=mid) update(2*nd,st,ed,id,val);
         else update(2*nd+1,mid+1,ed,id,val);
+        tree[nd]=combine(tree[2*nd],tree[2*nd+1]);
     }
-    tree[nd]=combine(tree[2*nd],tree[2*nd+1]);
 }
 
 ll query(ll nd,ll st,ll ed,ll l,ll r){
